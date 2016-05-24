@@ -1,0 +1,7 @@
+#!/usr/bin/env node
+
+global._req = require('app-root-path').require;
+
+var Server = _req('bin/WebServer').class;
+var server = new Server().init().start();
+_req('controller-api').init(server.app);
